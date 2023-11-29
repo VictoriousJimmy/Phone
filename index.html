@@ -106,12 +106,12 @@
             background-color: rgba(0, 0, 0, 0.84);
             border-radius: 5px;
             margin: auto;
-            top: 60px;
+            top: 40px;
             margin-left: 15px;
             background-image: url(./blurr.png);
             background-blend-mode: overlay;
             background-size: cover;
-            position: absolute;
+            position: relative;
             display: none;
         }
         #home{
@@ -120,12 +120,12 @@
             /* background-color: rgba(0, 0, 0, 0.84); */
             border-radius: 5px;
             /* margin: auto; */
-            top: 60px;
+            top: 40px;
             margin-left: 15px;
             background-image: url(./download\ \(11\).jpeg);
             /* background-blend-mode: overlay; */
             background-size: cover;
-            position: absolute;
+            position: relative;
             display: none;
         }
         .home {
@@ -149,16 +149,8 @@
             position: relative;
             border-radius: 10px;
         }
-        .sideBut {
-            height: 70px;
-            width: 8px;
-            background-color: rgb(217, 13, 13);
-            position: absolute;
-            left: 0;
-            /* top: -70% */
-        }
-        
-        .navbar {
+            
+    .navbar {
             /* background-color: white; */
             width: 95%;
             margin: auto;
@@ -270,7 +262,7 @@
         .sidee {
             width: 5px;
             height: 70px;
-            background-color: rebeccapurple;
+            background-color: rgb(53, 53, 53);
             position: relative;
             left: 100%;
             top: -70%;
@@ -278,9 +270,12 @@
             border-bottom-right-radius: 100%;
         }
         #black {
-            background-color: black;
+            background-color: rgb(29, 28, 28);
             width: 335px;
             height: 537px;
+            top: 40px;
+            position: relative;
+            margin-left: 15px;
             /* display: none; */
         }
     </style>
@@ -386,6 +381,8 @@ function unlock() {
       document.getElementById('lock').style.display = 'none';
       document.getElementById('screen').style.display = 'block';
       document.getElementById("black").style.display = 'none';
+      document.getElementById("home").style.display = 'none';
+
       
 }
 
@@ -406,6 +403,8 @@ function black() {
 function cancle() {
       document.getElementById("lock").style.display = 'block';
       document.getElementById("screen").style.display = 'none';
+
+      document.getElementById('input').value = "";
 }
 
 let input = document.getElementById("input")
@@ -433,6 +432,8 @@ function ok() {
       if (enteredPassword === storedPassword) {
         document.getElementById('screen').style.display = 'none';
         document.getElementById('home').style.display = 'block';
+
+        document.getElementById('input').value = "";
       } else {
         incPass.innerHTML = ""
         incPass.innerHTML += `<p>Try again</p>`;
