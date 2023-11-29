@@ -1,0 +1,399 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+        .frame{
+            width: 365px;
+            height: 667px;
+            background-color: black;
+            border-radius: 20px;
+            margin: auto;
+            margin-top: 10px;
+        }
+        #lock{
+            width: 335px;
+            height: 537px;
+            background-color: white;
+            border-radius: 5px;
+            margin: auto;
+            top: 40px;
+            background-image: url(./iOS\ 13\ Wallpaper\ \(YTECHB\ Exclusive\).jpeg);
+            background-size: cover;
+            position: relative;
+        }
+        .home {
+            width: 55px;
+            height: 55px;
+            border-radius: 50%;
+            background-color: rgb(23, 23, 23);
+            bottom: 72px;
+            position: relative;
+            margin: auto;
+            border: 5px solid rgb(69, 67, 67) ;
+        }
+        .cam {
+            width: 80px;
+            height: 10px;
+            background-color: rgb(23, 23, 23);
+            top: 20px;
+            margin: auto;
+            position: relative;
+            border-radius: 10px;
+        }
+        .sideBut {
+            height: 70px;
+            width: 8px;
+            background-color: rgb(41, 40, 40);
+            position: relative;
+            left: 100%;
+            top: -70%
+        }
+        .time {
+            text-align: center;
+            /* background-color: aquamarine; */
+            margin-top: 70px;
+            position: relative;
+        }
+        .navbar {
+            /* background-color: white; */
+            width: 95%;
+            margin: auto;
+            height: 15px;
+            display: flex;
+            top: 5px;
+            position: relative;
+            align-items: center;
+            justify-content: space-between;
+        }
+        .navbar p {
+            font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+            color: white;
+            font-size: 12px;
+        }
+        .time h1 {
+            font-size: 60px;
+            color: white;
+            font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+        }
+        .time p {
+            /* font-size: 60px; */
+            color: white;
+            margin-top: -5px;
+            font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+        }
+        .unlock button{
+            top: 93%;
+            color: white;
+            position: absolute;
+            text-align: center;
+            margin: auto;
+            width: 100%;
+            background-color: transparent;
+            border: none;
+        }
+        #screen{
+            width: 335px;
+            height: 537px;
+            background-color: rgba(0, 0, 0, 0.84);
+            border-radius: 5px;
+            margin: auto;
+            top: 60px;
+            margin-left: 15px;
+            background-image: url(./blurr.png);
+            background-blend-mode: overlay;
+            background-size: cover;
+            position: absolute;
+            /* display: none; */
+        }
+        #home{
+            width: 335px;
+            height: 537px;
+            /* background-color: rgba(0, 0, 0, 0.84); */
+            border-radius: 5px;
+            margin: auto;
+            top: 60px;
+            margin-left: 15px;
+            background-image: url(./download\ \(11\).jpeg);
+            /* background-blend-mode: overlay; */
+            background-size: cover;
+            position: absolute;
+            display: none;
+        }
+        .home {
+            width: 55px;
+            height: 55px;
+            border-radius: 50%;
+            background-color: rgb(23, 23, 23);
+            bottom: 115px;
+            /* margin-right: 200px; */
+            left: 48%;
+            position: fixed;
+            margin: auto;
+            border: 5px solid rgb(69, 67, 67) ;
+        }
+        .cam {
+            width: 80px;
+            height: 10px;
+            background-color: rgb(23, 23, 23);
+            top: 20px;
+            margin: auto;
+            position: relative;
+            border-radius: 10px;
+        }
+        .sideBut {
+            height: 70px;
+            width: 8px;
+            background-color: rgb(217, 13, 13);
+            position: fixed;
+            /* left: 100%; */
+            /* top: -70% */
+        }
+        
+        .navbar {
+            /* background-color: white; */
+            width: 95%;
+            margin: auto;
+            height: 15px;
+            display: flex;
+            top: 5px;
+            position: fixed;
+            position: relative;
+            align-items: center;
+            justify-content: space-between;
+        }
+        .navbar p {
+            font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+            color: white;
+            font-size: 12px;
+        }
+        .pin {
+            width: 80%;
+            height: 300px;
+            /* background-color: brown; */
+            margin: auto;
+            display: flex;
+            justify-content: space-around;
+            flex-wrap: wrap;
+            position: relative;
+            gap: 10px;
+            top: 20%;
+            align-items: center;
+        }
+        .pin button {
+            width: 65px;
+            height: 65px;
+            border-radius: 50%;
+            border: 0;
+            color: white;
+            font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+            font-size: 30px;
+            background-color: rgba(41, 41, 41, 0.784);
+            /* margin-right: 10px; */
+        }
+        input {
+            background-color: transparent;
+            width: 75%;
+            position: relative;
+            height: 40px;
+            top: 10%;
+            text-align: center;
+            font-size: 60px;
+            margin: auto;
+            border: 0;
+            color: white;
+            outline: none;
+            display: flex;
+            justify-content: center;
+        }
+        .down button {
+            background-color: transparent;
+            font-size: 15px;
+        }
+        .down {
+            width: 100%;
+            margin-top: 10px;
+            display: flex;
+            justify-content: space-between;
+        }
+        .icon img{
+            width: 55px;
+            height: 55px;
+        }
+        .icons img {
+            width: 55px;
+            height: 55px;
+            margin-top: 10px;
+        }
+        .icons {
+            width: 90%;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            justify-content: space-around;
+            margin: auto;
+            position: relative;
+            top: -30px;
+            /* background-color: aqua; */
+        }
+        .icon {
+            width: 100%;
+            bottom: 0;
+            position: absolute;
+            align-items: center;
+            height: 80px;
+            background-color: rgba(0, 0, 0, 0.654);
+            display: flex;
+            justify-content: space-around;
+        }
+        .ic {
+            text-align: center;
+            color: white;
+            font-size: 12px;
+            font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+        }
+        #incPass {
+            color: white;
+            position: absolute;
+            top: 50px;
+            font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+            left: 100px;
+        }
+    </style>
+</head>
+
+<body>
+    <main>
+        
+        <div class="frame">
+            <div class="cam"></div>
+            <div id="lock">
+                <div class="navbar">
+                    <img src="./wifi.svg" alt="">
+                    <p>0:00</p>
+                    <img src="./battery.svg" alt="">
+                </div>
+                
+                    <div class="time">
+                        <h1>0:00</h1>
+                        <p>Tuesday, 28 November</p>
+                    </div>
+                <div class="unlock"><button class="but" onclick="unlock()">Tap to Unlock</button></div>
+            </div>
+            <div id="screen">
+                <!-- <br> -->
+                <div class="navbar">
+                    <img src="./wifi.svg" alt="">
+                    <p>0:00</p>
+                    <img src="./battery.svg" alt="">
+                </div>
+                <p id="incPass"></p>
+                <input id="input" type="password">
+                <div class="pin">
+                    <button onclick="addnum(1)">1</button>
+                    <button onclick="addnum(2)">2</button>
+                    <button onclick="addnum(3)">3</button>
+                    <button onclick="addnum(4)">4</button>
+                    <button onclick="addnum(5)">5</button>
+                    <button onclick="addnum(6)">6</button>
+                    <button onclick="addnum(7)">7</button>
+                    <button onclick="addnum(8)">8</button>
+                    <button onclick="addnum(9)">9</button>
+                    <button onclick="">del</button>
+                    <button onclick="addnum(0)">0</button>
+                    <button onclick="ok()">ok</button>
+
+                    <div class="down">
+                        <button>Emergency</button>
+                        <button onclick="cancle()">Cancle</button>
+                    </div>
+                </div>
+            </div>
+            <div id="home">
+                <!-- <br> -->
+                <div class="navbar">
+                    <img src="./wifi.svg" alt="">
+                    <p>0:00</p>
+                    <img src="./battery.svg" alt="">
+                </div>
+                <input id="input" type="password">
+                <div class="icons">
+                    <div class="ic"><img src="./phone.png" alt="">
+                        <br><label for="">Phone</label></div>
+                    <div class="ic"><img src="./phone.png" alt="">
+                        <br><label for="">Phone</label></div>
+                    <div class="ic"><img src="./phone.png" alt="">
+                        <br><label for="">Phone</label></div>
+                    <div class="ic"><img src="./phone.png" alt="">
+                        <br><label for="">Phone</label></div>
+                    <div class="ic"><img src="./phone.png" alt="">
+                        <br><label for="">Phone</label></div>
+                    <div class="ic"><img src="./phone.png" alt="">
+                        <br><label for="">Phone</label></div>
+                    <div class="ic"><img src="./phone.png" alt="">
+                        <br><label for="">Phone</label></div>
+                    <div class="ic"><img src="./phone.png" alt="">
+                        <br><label for="">Phone</label></div>
+    
+                    
+                </div>
+                <div class="icon">
+                    <img src="./phone.png" alt="">
+                    <img src="./safari.png" alt="">
+                    <img src="./message.png" alt="">
+                    <img src="./recharge.png" alt="">
+                </div>
+            </div>
+            <div class="home" onclick="home()"></div>
+            <div class="sideBut"></div>
+            
+        </div>
+    </main>
+</body>
+</html>
+
+<script>
+function unlock() {
+      document.getElementById('lock').style.display = 'none';
+      document.getElementById('screen').style.display = 'block';
+}
+
+function cancle() {
+      document.getElementById('lock').style.display = 'block';
+      document.getElementById('screen').style.display = 'none';
+}
+
+let input = document.getElementById("input")
+
+function addnum(params) {
+    input.value += params
+}
+
+let password = '2006';
+    localStorage.setItem('password', password);
+    console.log('Password set in localStorage: ' + password);
+
+function ok() {
+      let storedPassword = localStorage.getItem('password');
+      let enteredPassword = document.getElementById('input').value;
+
+      let incPass = document.getElementById("incPass");
+
+      if (enteredPassword === storedPassword) {
+        document.getElementById('screen').style.display = 'none';
+        document.getElementById('home').style.display = 'block';
+      } else {
+        incPass.innerHTML += `<p>Incorrect password</p>`;
+        document.getElementById('input').value = "";
+        // incPass.innerHTML = ""
+      }
+    }
+
+</script>
