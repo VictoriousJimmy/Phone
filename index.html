@@ -10,7 +10,7 @@
             margin: 0;
             padding: 0;
         }
-        .frame{
+        #frame{
             width: 365px;
             height: 667px;
             background-color: black;
@@ -28,6 +28,7 @@
             background-image: url(./iOS\ 13\ Wallpaper\ \(YTECHB\ Exclusive\).jpeg);
             background-size: cover;
             position: relative;
+            display: none;
         }
         .home {
             width: 55px;
@@ -132,10 +133,10 @@
             height: 55px;
             border-radius: 50%;
             background-color: rgb(23, 23, 23);
-            bottom: 115px;
+            bottom: -47px;
             /* margin-right: 200px; */
-            left: 48%;
-            position: absolute;
+            /* left: 48%; */
+            position: relative;
             margin: auto;
             border: 5px solid rgb(69, 67, 67) ;
         }
@@ -152,8 +153,8 @@
             height: 70px;
             width: 8px;
             background-color: rgb(217, 13, 13);
-            position: fixed;
-            /* left: 100%; */
+            position: absolute;
+            left: 0;
             /* top: -70% */
         }
         
@@ -266,13 +267,29 @@
             font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
             left: 135px;
         }
+        .sidee {
+            width: 5px;
+            height: 70px;
+            background-color: rebeccapurple;
+            position: relative;
+            left: 100%;
+            top: -70%;
+            border-top-right-radius: 100%;
+            border-bottom-right-radius: 100%;
+        }
+        #black {
+            background-color: black;
+            width: 335px;
+            height: 537px;
+            /* display: none; */
+        }
     </style>
 </head>
 
 <body>
     <main>
         
-        <div class="frame">
+        <div id="frame">
             <div class="cam"></div>
             <div id="lock">
                 <div class="navbar">
@@ -286,6 +303,9 @@
                         <p>Tuesday, 28 November</p>
                     </div>
                 <div class="unlock"><button class="but" onclick="unlock()">Tap to Unlock</button></div>
+            </div>
+            <div id="black">
+                
             </div>
             <div id="screen">
                 <!-- <br> -->
@@ -306,7 +326,7 @@
                     <button onclick="addnum(7)">7</button>
                     <button onclick="addnum(8)">8</button>
                     <button onclick="addnum(9)">9</button>
-                    <button onclick="">del</button>
+                    <button onclick="del()">del</button>
                     <button onclick="addnum(0)">0</button>
                     <button onclick="ok()">ok</button>
 
@@ -351,8 +371,9 @@
                     <img src="./recharge.png" alt="">
                 </div>
             </div>
-            <div class="home" onclick="home()"></div>
-            <div class="sideBut"></div>
+            <div class="home" onclick="wake()"></div>
+            <div class="sidee" onclick="black()"></div>
+            
             
         </div>
     </main>
@@ -360,14 +381,31 @@
 </html>
 
 <script>
+
 function unlock() {
       document.getElementById('lock').style.display = 'none';
       document.getElementById('screen').style.display = 'block';
+      document.getElementById("black").style.display = 'none';
+      
+}
+
+function wake() {
+      document.getElementById("lock").style.display = 'block';
+      document.getElementById("black").style.display = 'none';
+
+      
+}
+
+function black() {
+      document.getElementById("lock").style.display = 'none';
+      document.getElementById("screen").style.display = 'none';
+      document.getElementById("home").style.display = 'none';
+      document.getElementById("black").style.display = 'block';
 }
 
 function cancle() {
-      document.getElementById('lock').style.display = 'block';
-      document.getElementById('screen').style.display = 'none';
+      document.getElementById("lock").style.display = 'block';
+      document.getElementById("screen").style.display = 'none';
 }
 
 let input = document.getElementById("input")
@@ -379,6 +417,12 @@ function addnum(params) {
 let password = '2006';
     localStorage.setItem('password', password);
     console.log('Password set in localStorage: ' + password);
+
+function del() {
+    
+    input.value = input.value.slice(0, -1);
+}
+
 
 function ok() {
       let storedPassword = localStorage.getItem('password');
